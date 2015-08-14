@@ -21,7 +21,7 @@ describe Docks::Themes::API::Assets do
     end
 
     it "provides links to source assets" do
-      expect(subject.path_for("components", "avatar", "avatar.scss")).to eq File.expand_path("../source/components/avatar/avatar.scss", root)
+      expect(subject.path_for("components", "avatar", "avatar.scss")).to eq Pathname.new File.expand_path("../source/components/avatar/avatar.scss", root)
     end
   end
 

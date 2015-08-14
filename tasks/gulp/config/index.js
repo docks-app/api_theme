@@ -3,22 +3,22 @@ var path = require("path"),
 
 sources = {
   styles: {
-    all: ["assets/source/**/*.scss"],
+    all: ["source/**/*.scss"],
     main: [
-      "assets/source/pattern-library.scss",
-      "assets/source/pattern-library-demo.scss"
+      "source/pattern-library.scss",
+      "source/pattern-library-demo.scss"
     ]
   },
   scripts: {
     all: [
-      "assets/source/**/!(spec)/*.js",
-      "!assets/source/vendor/**/*.js"
+      "source/**/!(spec)/*.js",
+      "!source/vendor/**/*.js"
     ],
     main: [
-      "assets/source/pattern_library.js",
-      "assets/source/pattern_library_demo.js"
+      "source/pattern_library.js",
+      "source/pattern_library_demo.js"
     ],
-    spec: ["assets/source/**/*_spec.js"]
+    spec: ["source/**/*_spec.js"]
   },
   templates: {
     all: ["assets/templates/erb/**/*.erb"]

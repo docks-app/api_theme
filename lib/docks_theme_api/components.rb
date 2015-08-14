@@ -15,7 +15,7 @@ module Docks::Themes
 
       def self.template_path(name)
         name = name.to_s.split(":")
-        Assets.path_for(File.join(name.first, "#{name.join("_")}.erb"), source: true)
+        Assets.path_for(File.join("components", name.first, "#{name.join("_")}.erb"))
       end
     end
   end

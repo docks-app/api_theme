@@ -1,11 +1,11 @@
 require "rubygems"
 
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path('../lib', __FILE__)
+$:.push File.expand_path("../lib", __FILE__)
 require "docks_theme_api/version"
 
 Gem::Specification.new do |s|
-  s.name                  = 'docks'
+  s.name                  = "docks_theme_api"
   s.version               = Docks::Themes::API::VERSION
   s.platform              = Gem::Platform::RUBY
   s.required_ruby_version = ">= 1.9.3"
@@ -21,7 +21,6 @@ Gem::Specification.new do |s|
   s.executables           = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   s.require_paths         = ["lib"]
 
-  s.add_dependency "docks"
   s.add_dependency "activesupport"
 
   s.add_development_dependency "bundler", "~> 1.3"

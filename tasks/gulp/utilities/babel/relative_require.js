@@ -14,7 +14,7 @@ module.exports = function(babel) {
       // ensure a value, make sure it's not home relative e.g. ~/foo
       if (!ref || ref[0] !== "~" || ref[1] === "/") { return node; }
 
-      node.source.value = cwd + "/assets/source/" + node.source.value.slice(1);
+      node.source.value = cwd + "/source/" + node.source.value.slice(1);
 
       return node;
     }

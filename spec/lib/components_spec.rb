@@ -19,12 +19,12 @@ describe Docks::Themes::API::Components do
 
     it "returns the path to the component's template" do
       path = subject.template_path(:code_block)
-      expect(path).to eq File.join(subject::COMPONENT_TEMPLATES_PATH, "code_block/code_block.erb")
+      expect(path).to eq Docks::Themes::API::Assets.path_for("components/code_block/code_block.erb")
       expect(File.exists?(path)).to be true
     end
 
     it "returns the path to a nested template" do
-      expect(subject.template_path("tablist:tab")).to eq File.join(subject::COMPONENT_TEMPLATES_PATH, "tablist/tablist_tab.erb")
+      expect(subject.template_path("tablist:tab")).to eq Docks::Themes::API::Assets.path_for("components/tablist/tablist_tab.erb")
     end
   end
 end

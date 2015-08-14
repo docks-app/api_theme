@@ -1,8 +1,8 @@
 require "spec_helper"
 
-describe Docks::Themes::API::UIHelper do
+describe Docks::Themes::API::Helpers do
   let(:includer) do
-    Class.new { include Docks::Themes::API::UIHelper }.new
+    Class.new { include Docks::Themes::API::Helpers }.new
   end
 
   describe "#unique_iframe_id" do
@@ -14,7 +14,7 @@ describe Docks::Themes::API::UIHelper do
 
   describe "#docks_icons" do
     it "returns the contents of the icon file" do
-      expect(File).to receive(:read).with(Docks::Assets.path_for("images/icons.svg")).and_return("foo")
+      expect(File).to receive(:read).with(Docks::Themes::API::Assets.path_for("images/icons.svg")).and_return("foo")
       expect(includer.docks_icons).to eq "foo"
     end
   end

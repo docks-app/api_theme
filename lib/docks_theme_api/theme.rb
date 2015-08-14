@@ -1,3 +1,5 @@
+require "singleton"
+
 Dir[File.expand_path("../helpers/*.rb", __FILE__)].each do |helper|
   require helper
 end
@@ -6,7 +8,9 @@ require_relative "assets.rb"
 
 module Docks
   module Themes
-    class API < Base
+    class API
+      include Singleton
+
       def styles; Assets.styles end
       def scripts; Assets.scripts end
 

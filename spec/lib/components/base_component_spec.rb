@@ -52,8 +52,8 @@ describe Docks::Themes::API::Components::Base do
   end
 end
 
-describe Docks::Components::Config do
-  let(:component_class) { Docks::Components::Base }
+describe Docks::Themes::API::Components::Config do
+  let(:component_class) { Docks::Themes::API::Components::Base }
   let(:view) { OpenStruct.new }
 
   describe "#defaults" do

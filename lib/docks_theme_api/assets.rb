@@ -31,7 +31,7 @@ module Docks::Themes
       end
 
       def self.source_root_path
-        @source_root_path ||= root_path.expand_path("../source")
+        @source_root_path ||= root_path + "../source"
       end
     end
   end

@@ -15,6 +15,8 @@ import Xray from "./xray";
 
 import App from "~foundation/app";
 
+/* eslint-disable indent */
+
 [
   Avatar,
   CodeBlock,
@@ -31,3 +33,5 @@ import App from "~foundation/app";
   Toggles,
   Xray
 ].forEach(App.register);
+
+/* eslint-enable indent */

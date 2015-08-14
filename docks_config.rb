@@ -22,7 +22,7 @@ Docks.configure do |config|
   config.templates = "pattern_library_assets/templates/erb"
 
   config.mount_at = "pattern-library"
-  config.copy_bundled_assets = false
+  config.use_theme_assets = false
   config.github_repo = "docks-app/docks_theme_api"
 
   config.pattern_id = lambda do |file|
