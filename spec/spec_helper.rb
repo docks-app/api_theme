@@ -1,4 +1,6 @@
 require "docks_theme_api"
+require "fileutils"
+require "ostruct"
 require "awesome_print"
 require "rspec-html-matchers"
 

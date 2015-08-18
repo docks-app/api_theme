@@ -14,7 +14,7 @@ describe Docks::Themes::API::Helpers do
 
   describe "#docks_icons" do
     it "returns the contents of the icon file" do
-      expect(File).to receive(:read).with(Docks::Themes::API::Assets.path_for("images/icons.svg")).and_return("foo")
+      expect(File).to receive(:read).with(Docks::Themes::API.instance.assets.path_for("images/icons.svg")).and_return("foo")
       expect(includer.docks_icons).to eq "foo"
     end
   end

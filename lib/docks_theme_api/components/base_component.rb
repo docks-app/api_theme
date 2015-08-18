@@ -1,7 +1,7 @@
 require "forwardable"
 
 module Docks::Themes
-  class API
+  class API < Base
     module Components
       def self.standardize_classes(classes, base_component = :base)
         return {} if classes.nil?

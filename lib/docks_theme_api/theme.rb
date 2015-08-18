@@ -1,23 +1,15 @@
-require "singleton"
+require "docks_theme_base"
 
 Dir[File.expand_path("../helpers/*.rb", __FILE__)].each do |helper|
   require helper
 end
 
-require_relative "assets.rb"
-
 module Docks
   module Themes
-    class API
-      include Singleton
-
-      def styles; Assets.styles end
-      def scripts; Assets.scripts end
-
-      def setup(builder)
-        builder.add_assets(:styles, Assets.files_for("styles/#{builder.options.style_language}/**/*"))
-        builder.add_assets(:scripts, Assets.files_for("scripts/#{builder.options.script_language}/**/*"))
-        builder.add_assets(:templates, Assets.files_for("templates/#{builder.options.template_language}/**/*"))
+    class API < Base
+      def initialize
+        project_root = Pathname.new(File.expand_path("../../../", __FILE__))
+        @assets = Assets.new(root: project_root + "assets", source_root: project_root + "source")
       end
 
       def configure(config)

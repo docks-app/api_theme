@@ -41,13 +41,14 @@ describe Docks::Themes::API::Components::Base do
   end
 
   describe "#method_missing" do
+    let(:component) { subject.new(view, name: "foo") }
+
     it "returns the value of a configured option" do
-      component = subject.new(view, name: "foo")
       expect(component.name).to eq "foo"
     end
 
     it "calls the regular method missing for keys that don't exist" do
-      expect { component.name }.to raise_error
+      expect { component.foo }.to raise_error(NoMethodError)
     end
   end
 end

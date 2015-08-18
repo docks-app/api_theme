@@ -1,7 +1,8 @@
+require "docks/templates"
 require_relative "../components.rb"
 
 module Docks::Themes
-  class API
+  class API < Base
     module Helpers
       def unique_iframe_id
         @iframe_id ||= 0
@@ -11,7 +12,7 @@ module Docks::Themes
 
       def docks_icons
         # html safe
-        File.read(Assets.path_for("images/icons.svg"))
+        File.read(API.instance.assets.path_for("images/icons.svg"))
       end
 
       def docks_icon(name, options = {})
