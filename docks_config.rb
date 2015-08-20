@@ -1,3 +1,5 @@
+require File.expand_path("../lib/docks_theme_api/helpers/ui_helper.rb", __FILE__)
+
 Docks.configure do |config|
   config.sources = [
     "source/components/**/*.{scss,js,md}",
@@ -14,16 +16,12 @@ Docks.configure do |config|
     "pattern_library.js"
   ]
 
-  config.asset_folders = {
-    scripts: "scripts",
-    styles: "styles"
-  }
-
-  config.templates = "pattern_library_assets/templates/erb"
+  config.templates = "assets/templates/erb"
+  config.helpers = [Docks::Themes::API::Helpers]
 
   config.mount_at = "pattern-library"
-  config.use_theme_assets = false
-  config.github_repo = "docks-app/docks_theme_api"
+  config.github_repo = "docks-app/api_theme"
+  config.theme = false
 
   config.pattern_id = lambda do |file|
     dir = File.basename(File.dirname(file))

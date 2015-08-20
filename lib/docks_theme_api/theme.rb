@@ -10,11 +10,11 @@ module Docks
       def initialize
         project_root = Pathname.new(File.expand_path("../../../", __FILE__))
         @assets = Assets.new(root: project_root + "assets", source_root: project_root + "source")
+        @helpers = [Helpers]
       end
 
       def configure(config)
-        config.paginate = :pattern
-        config.helpers += [Helpers]
+        config.paginate = "pattern"
       end
     end
   end
