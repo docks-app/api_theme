@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "docks_app"
   s.add_runtime_dependency "docks_theme_base"
 
+  s.add_development_dependency "redcarpet", "~> 3.1"
   s.add_development_dependency "bundler", "~> 1.3"
   s.add_development_dependency "rubocop", "< 1.0"
   s.add_development_dependency "rake", "~> 10.4"
